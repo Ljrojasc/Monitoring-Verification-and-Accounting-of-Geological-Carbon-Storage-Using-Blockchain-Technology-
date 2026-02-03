@@ -1,0 +1,25 @@
+test:
+  name: Multi-Org CCS Benchmark
+  description: Benchmark sending transactions from Org1, Org2, Org3
+  workers:
+    type: local
+    number: 3
+
+  rounds:
+    - label: daily-transactions
+      description: Simulate monthly CCS contract lifecycle across Orgs
+      txDuration: 120
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 7
+      workload:
+        module: /home/srg/Documents/caliper-benchmarks/workload/scenario1-dailytx.js
+        arguments:
+          contractId: ccschaincode
+          channel: laurachannel
+        #contractFunction: CreateCaptureContract
+          identities:
+            - User1
+            - User2
+            - User3

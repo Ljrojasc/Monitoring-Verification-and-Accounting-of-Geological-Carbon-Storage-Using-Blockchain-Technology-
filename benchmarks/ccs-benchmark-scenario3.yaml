@@ -1,0 +1,21 @@
+
+test:
+  name: Annual CO2 Stored Benchmark
+  description: Simulates 12 months of transactions from multiple orgs before finalizing the annual CO2 total with a single transaction from Org6.
+  workers:
+    type: local
+    number: 2  # single worker is fine for sequential year simulation
+  rounds:
+    - label: annual-CO2-stored
+      description: Run the annual CO2 calculation transaction after populating the ledger with a year's worth of data.
+      txDuration: 120          # Run for 2 minutes to ensure all transactions are submitted and committed
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 7                
+      workload:
+        module: /home/srg/Documents/caliper-benchmarks/workload/Scenario3-Yearly.js
+        arguments:
+          contractId: ccschaincode
+          channel: laurachannel
+          

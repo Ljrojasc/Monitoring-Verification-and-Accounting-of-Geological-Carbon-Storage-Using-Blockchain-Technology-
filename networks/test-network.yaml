@@ -1,0 +1,84 @@
+name: Caliper Benchmarks
+version: "2.0.0"
+
+caliper:
+  blockchain: fabric
+
+channels:
+  - channelName: laurachannel
+    contracts:
+      - id: ccschaincode
+
+organizations:
+  - mspid: Org1MSP
+    identities:
+      certificates:
+      - name: 'User1'
+        clientPrivateKey:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/priv_sk
+        clientSignedCert:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/cert.pem
+    connectionProfile:
+      path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org1.example.com/connection-org1.yaml
+      discover: true
+
+  - mspid: Org2MSP
+    identities:
+      certificates:
+      - name: 'User2'
+        clientPrivateKey:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/users/User2@org2.example.com/msp/keystore/priv_sk
+        clientSignedCert:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/users/User2@org2.example.com/msp/signcerts/cert.pem
+    connectionProfile:
+      path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/connection-org2.yaml
+      discover: true
+
+  - mspid: Org3MSP
+    identities:
+      certificates:
+      - name: 'User3'
+        clientPrivateKey:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org3.example.com/users/User3@org3.example.com/msp/keystore/priv_sk
+        clientSignedCert:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org3.example.com/users/User3@org3.example.com/msp/signcerts/cert.pem
+    connectionProfile:
+      path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org3.example.com/connection-org3.yaml
+      discover: true
+
+  - mspid: Org4MSP
+    identities:
+      certificates:
+      - name: 'User4'
+        clientPrivateKey:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org4.example.com/users/User4@org4.example.com/msp/keystore/priv_sk
+        clientSignedCert:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org4.example.com/users/User4@org4.example.com/msp/signcerts/cert.pem
+    connectionProfile:
+      path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org4.example.com/connection-org4.yaml
+      discover: true
+
+  - mspid: Org5MSP
+    identities:
+      certificates:
+      - name: 'User5'
+        clientPrivateKey:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org5.example.com/users/User5@org5.example.com/msp/keystore/priv_sk
+        clientSignedCert:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org5.example.com/users/User5@org5.example.com/msp/signcerts/cert.pem
+    connectionProfile:
+      path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org5.example.com/connection-org5.yaml
+      discover: true
+
+
+  - mspid: Org6MSP
+    identities:
+      certificates:
+      - name: 'User6'
+        clientPrivateKey:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org6.example.com/users/User6@org6.example.com/msp/keystore/priv_sk
+        clientSignedCert:
+          path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org6.example.com/users/User6@org6.example.com/msp/signcerts/cert.pem
+    connectionProfile:
+      path: /home/srg/Documents/fabric-samples/MVA_for_CCS_Blockchain_new/blockchain-network/artifacts/channel/crypto-config/peerOrganizations/org6.example.com/connection-org6.yaml
+      discover: true

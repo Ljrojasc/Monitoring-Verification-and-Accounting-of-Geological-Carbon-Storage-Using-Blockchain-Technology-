@@ -1,0 +1,23 @@
+test:
+  name: Monthly CO2 Calculation Benchmark
+  description: Orgs 1-3 send capture/transport/storage tx, Org6 finalizes monthly CO2 stored
+  workers:
+    type: local
+    number: 4   # Org1, Org2, Org3, Org6
+
+  rounds:
+    - label: Monthly-CO2-Stored-Calculation
+      description: Simulate 12 months of transactions and Org6 calculations
+      txDuration: 120      # Run for 2 minutes
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 7            # 4 transactions per second (adjust as needed)
+      workload:
+        module: /home/srg/Documents/caliper-benchmarks/workload/Scenario2-Monthly.js
+        arguments:
+          contractId: ccschaincode
+          channel: laurachannel
+          projectId: Project_001
+          months: 12
+          txPerMonth: 20 #I can modify this 

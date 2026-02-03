@@ -1,0 +1,16 @@
+# core.yaml (updated minimal config)
+logging:
+  level: info
+
+peer:
+  id: cli
+
+# Required for cryptographic operations
+BCCSP:
+  Default: SW
+  SW:
+    Hash: SHA2
+    Security: 256
+    FileKeyStore:
+      # A temp folder for key storage (not used by CLI directly, just needed to silence error)
+      KeyStore: /tmp/hfc-kvs

@@ -1,0 +1,49 @@
+test:
+  name: Multi-Org CCS Benchmark
+  description: Benchmark sending transactions from Org1, Org2, Org3
+  workers:
+    type: local
+    number: 3
+
+  rounds:
+    - label: capture-contracts
+      description: Benchmark CreateCaptureContract function
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1 
+      workload:
+        module: /home/srg/Documents/caliper-benchmarks/workload/scenario1-dailytx-individual.js
+        arguments:
+          contractId: ccschaincode
+          channel: laurachannel
+          functionName: CreateCaptureContract
+
+    - label: transport-details
+      description: Benchmark UpdateTransportDetails function
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: /home/srg/Documents/caliper-benchmarks/workload/scenario1-dailytx-individual.js
+        arguments:
+          contractId: ccschaincode
+          channel: laurachannel
+          functionName: UpdateTransportDetails
+
+    - label: storage-details
+      description: Benchmark UpdateStorageDetails function
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: /home/srg/Documents/caliper-benchmarks/workload/scenario1-dailytx-individual.js
+        arguments:
+          contractId: ccschaincode
+          channel: laurachannel
+          functionName: UpdateStorageDetails

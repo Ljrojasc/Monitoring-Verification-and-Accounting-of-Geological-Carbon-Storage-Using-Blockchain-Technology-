@@ -1,0 +1,46 @@
+test:
+  name: CCS Synthetic Benchmark
+  description: Benchmark for synthetic CCS workflow with dynamic data
+  workers:
+    type: local
+    number: 4   
+
+  rounds:
+    - label: round1-data
+      description: Simulate capture, transport, and storage transactions for the project
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 5
+      workload:
+        module: /home/srg/Documents/caliper-benchmarks/workload/allworkflow.js
+        arguments:
+          contractId: ccschaincode
+          channel: laurachannel
+
+    - label: round2-monthly
+      description: Org6 monthly finalization of CO2 stored
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: /home/srg/Documents/caliper-benchmarks/workload/allworkflow.js
+        arguments:
+          contractId: ccschaincode
+          channel: laurachannel
+
+    - label: round3-annual
+      description: Org6 annual finalization of CO2 stored
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: /home/srg/Documents/caliper-benchmarks/workload/allworkflow.js
+        arguments:
+          contractId: ccschaincode
+          channel: laurachannel

@@ -35,7 +35,7 @@ To test the api and see if it works open postman and send test API. Key: The pri
 1. run: npm i -f to install the depdencies
 2. Type: npm start and type Y
 
-# ----- ISSUES ENCOUNTERED ----- 
+# ISSUES ENCOUNTERED
 
 - Error while installing the chaincode: Error: chaincode install failed with status: 500 - failed to invoke backing implementation of 'InstallChaincode': could not build chaincode: docker build failed: docker image inspection failed: Get "http://unix.sock/images/dev-peer0.org1.example.com-ccschaincode_1-96ee7a9a4415beed2fdc72edc144c6bdbbf3b6d65dfa5351e82a91ed67d191ec-8ff9cc32e5e6cdcad76673e8567f02d23d84e220330e41cae8d7e9d3b895016e/json": dial unix /host/var/run/docker.sock: connect: no such file or directory.  To fix this error you go to the Docker Desktop settings and for the Choose file sharing implementation for your containers setting choose osxfs (Legacy), this solved the communication issue between Hyperledger Fabric and Docker on Mac, another solution is to install an old version of docker. 
 
